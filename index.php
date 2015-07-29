@@ -3,9 +3,9 @@
 declare(ticks=1); 
 //A very basic job daemon that you can extend to your needs. 
 class MultiThread { 
-	public static $processes = array();
-	public static $processes_limit = 5;
-	public static $max_system_load = 70;
+    public static $processes = array();
+    public static $processes_limit = 5;
+    public static $max_system_load = 70;
 
     public static $signal_queue=array();   
     public static $parent_pid; 
