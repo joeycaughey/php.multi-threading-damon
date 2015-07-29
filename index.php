@@ -25,17 +25,17 @@ class MultiThread {
 
             while (count(self::$processes) >= self::$processes_limit){ 
             	$cores = self::get_system_cores();
-				$load = self::get_system_load();
+		$load = self::get_system_load();
 
-				$running_processes = count(self::$processes);
-				$process_limit = self::$processes_limit;
+		$running_processes = count(self::$processes);
+		$process_limit = self::$processes_limit;
 
-				if ($load>self::$max_system_load) {
-					self::$processes_limit++;
-				} 
+		if ($load>self::$max_system_load) {
+			self::$processes_limit++;
+		} 
 
-				echo "Maximum children allowed, waiting... (Cores: {$cores}) Load {$load}% | Processes {$running_processes}/{$process_limit}\n"; 
-				sleep(1); 
+		echo "Maximum children allowed, waiting... (Cores: {$cores}) Load {$load}% | Processes {$running_processes}/{$process_limit}\n"; 
+		sleep(1); 
             } 
 
             $launched = self::launch_job($job_id, $function); 
